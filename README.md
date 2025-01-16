@@ -55,6 +55,7 @@
   git clone https://github.com/johnsmith80/Hacker-Hook.git
   cd Hacker-Hook
   unzip webpage.zip
+  chmod u+x hackerhook.sh or chmod 777 hackerhook.sh
   sudo ./hackerhook.sh -i
   sudo ./hackerhook.sh or sudo ./hackerhook.sh run
 ```
