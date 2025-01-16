@@ -540,7 +540,7 @@ else
         printf "${Yellow}Starting ${BGreen}NGROK ${Green}server "
         xterm -T "NGROK server ☣" -geometry 90x26+1000+1000 -hold -e "/usr/local/bin/ngrok http 80" > /dev/null 2>&1 &
         sleep 8
-        printf "${BGreen}OK.${clear}\n\n"
+        printf "${BGreen}OK. ${BRed}(NOTE: ${Red}using NGROK could caused of account banned) ${clear}\n\n"
         link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o 'https://[-0-9a-z]*\.ngrok.io')
         sleep 3
         printf "${BYellow}Localhost: ${BGreen}127.0.0.1:80"
@@ -713,9 +713,13 @@ else
         clear
         banner3
         printf "${Red}[🪝${Red}]${BWhite}Choose your host server\n\n"
-        printf "${Red}[${Blue}N${Red}]${BGreen} NGROK ${Green}server ${BYellow}(${BGreen}Recomended${BYellow})\n"
-        printf "${Red}[${Blue}L${Red}]${BGreen} Local Tunnel ${Green}server ${BYellow}(${BRed}Sometimes Doesnt Work.${BYellow})\n"
-        printf "${Red}[${Blue}C${Red}]${BGreen} Cloudflared ${Green}server ${BYellow}(${BGreen}Beta version.${BYellow})\n"
+        printf "${Red}[🪝${Red}]${BWhite}Deautherist Team received a request to remove NGROK from this program as This tool directly violates \n\n"
+        printf "${Red}[🪝${Red}]${BWhite}the ngrok Terms of Service, even when used for educational purposes only. As a result, we didn't include \n"
+        printf "${Red}[🪝${Red}]${BWhite}ngrok on our repo but the option to use it is still available, note that using ngrok might cause your account \n"
+        printf "${Red}[🪝${Red}]${BWhite}for banned. We assume NO liability and are NOT responsible for your account getting banned. \n\n"
+        printf "${Red}[${Blue}N${Red}]${BGreen} NGROK ${Green}server ${BYellow}(${BRed}Not Recomended${BYellow})\n"
+        printf "${Red}[${Blue}L${Red}]${BGreen} Local Tunnel ${Green}server ${BYellow}(${BBlue}Sometimes Doesnt Work.${BYellow})\n"
+        printf "${Red}[${Blue}C${Red}]${BGreen} Cloudflare ${Green}server ${BYellow}(${BGreen}Beta version.${BYellow})\n"
         printf "${Red}[${Blue}B${Red}]${BGreen} Back\n${BCyan}"
         echo ""
         read -p "[🪝]Host Server: " host
